@@ -1,5 +1,5 @@
 {
-	'includes': [ '<!(node -e "require(\'node-addon-tools-raub\').gypi")' ],
+	'includes': [ '<!(node -e "console.log(require(\'node-addon-tools-raub\').gypi"))' ],
 	'variables': {
 		'rem' : '<!(node -e "console.log(require(\'.\').rem)")',
 	},
