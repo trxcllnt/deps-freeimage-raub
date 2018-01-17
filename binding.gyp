@@ -1,8 +1,10 @@
 {
-	'includes': [ '<!(node -e "console.log(require(\'node-addon-tools-raub\').gypi)")' ],
+	
 	'variables': {
-		'rem' : '<!(node -e "console.log(require(\'.\').rem)")',
+		'rem'   : '<!(node -e "console.log(require(\'.\').rem)")',
+		'tools' : '<!(node -e "console.log(require(\'node-addon-tools-raub\').gypi)")',
 	},
+	'includes': [ '<(tools)' ],
 	'targets': [
 		{
 			'target_name'  : 'remove_extras',
