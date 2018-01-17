@@ -1,4 +1,5 @@
 {
+	'includes': [ '<!(node -e "require(\'node-addon-tools-raub\').gypi")' ],
 	'variables': {
 		'rem' : '<!(node -e "console.log(require(\'.\').rem)")',
 	},
@@ -14,7 +15,7 @@
 					'conditions'  : [
 						[ 'OS=="linux"', { 'action' : [ 'rm', '-rf', '<@(_inputs)' ] } ],
 						[ 'OS=="mac"'  , { 'action' : [ 'rm', '-rf', '<@(_inputs)' ] } ],
-						[ 'OS=="win"'  , { 'action' : [ '<(module_root_dir)/_rd', '<@(_inputs)' ] } ],
+						[ 'OS=="win"'  , { 'action' : [ '<(_rd)', '<@(_inputs)' ] } ],
 					],
 				}
 			],

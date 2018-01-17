@@ -31,6 +31,6 @@
 		"url": "https://github.com/raub/node-deps-freeimage"
 	},
   "dependencies": {
-    "node-addon-tools-raub": "git+https://github.com/raub/node-addon-tools"
+    "node-addon-tools-raub": "git+https://github.com/raub/node-addon-tools.git"
   }
 }
