@@ -22,7 +22,7 @@ which also can be found on
 [FreeImage's official web-site](http://freeimage.sourceforge.net/license.html).
 The rest of this package is MIT licensed.
 
-Windows binaries were found on the official website.
+Windows binaries were found on the official web-site.
 Unix binaries are found through
 [Debian Packages](https://packages.debian.org/search?searchon=sourcenames&keywords=freeimage)
 and [MacOS Formulae](http://formulae.brew.sh/formula/freeimage).
@@ -62,7 +62,7 @@ and [MacOS Formulae](http://formulae.brew.sh/formula/freeimage).
 				['OS=="mac"', {
 					'libraries': [
 						'-Wl,-rpath,<(freeimage_bin)',
-						'<(freeimage_bin)/freeimage.dylib,
+						'<(freeimage_bin)/freeimage.dylib',
 						...
 					],
 				}],
