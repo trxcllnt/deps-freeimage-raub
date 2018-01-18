@@ -1,15 +1,13 @@
 {
-	
 	'variables': {
-		'rem'   : '<!(node -e "console.log(require(\'.\').rem)")',
-		'tools' : '<!(node -e "console.log(require(\'node-addon-tools-raub\').gypi)")',
+		'_rd' : '<!(node -e "console.log(require(\'node-addon-tools-raub\')._rd)")',
+		'rem' : '<!(node -e "console.log(require(\'.\').rem)")',
 	},
-	'includes': [ '<(tools)' ],
 	'targets': [
 		{
-			'target_name'  : 'remove_extras',
-			'type'         : 'none',
-			'actions'      : [
+			'target_name' : 'remove_extras',
+			'type'        : 'none',
+			'actions'     : [
 				{
 					'action_name' : 'Unnecessary binaries removed.',
 					'inputs'      : ['<@(rem)'],
