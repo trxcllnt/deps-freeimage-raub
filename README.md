@@ -1,5 +1,4 @@
-# node-deps-freeimage
-
+# FreeImage binaries
 
 * Platforms: win x32/x64, linux x32/x64, mac x64.
 * Library: FreeImage.
@@ -8,7 +7,7 @@
 
 ## Install
 
-`npm i -s node-deps-freeimage-raub`
+`npm i -s deps-freeimage-raub`
 
 
 ## Legal notice
@@ -34,8 +33,8 @@ and [MacOS Formulae](http://formulae.brew.sh/formula/freeimage).
 
 ```javascript
 	'variables': {
-		'freeimage_include' : '<!(node -e "console.log(require(\'node-deps-freeimage-raub\').include)")',
-		'freeimage_bin'     : '<!(node -e "console.log(require(\'node-deps-freeimage-raub\').bin)")',
+		'freeimage_include' : '<!(node -e "console.log(require(\'deps-freeimage-raub\').include)")',
+		'freeimage_bin'     : '<!(node -e "console.log(require(\'deps-freeimage-raub\').bin)")',
 	},
 	...
 	'targets': [
