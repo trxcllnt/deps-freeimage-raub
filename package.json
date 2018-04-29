@@ -9,7 +9,7 @@
 		"dependency",
 		"freeimage",
 		"image",
-		"decoder"
+		"decoder",
 		"graphics"
 	],
 	"engines": {
