@@ -1,23 +1,16 @@
 {
 	"author": "Luis Blanco <luisblanco1337@gmail.com>",
 	"name": "deps-freeimage-raub",
-	"version": "0.0.4",
+	"version": "0.0.5",
 	"description": "Binaries and headers for FreeImage-dependent compilation",
 	"license": "MIT",
 	"main": "index.js",
 	"keywords": [
-		"graphics",
-		"binaries",
-		"deps",
 		"dependency",
-		"addon",
-		"compile",
-		"lib",
-		"dll",
-		"so",
-		"windows",
-		"mac",
-		"linux"
+		"freeimage",
+		"image",
+		"decoder"
+		"graphics"
 	],
 	"engines": {
 		"node": ">=8.11.1",
