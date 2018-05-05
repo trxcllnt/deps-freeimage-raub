@@ -1,5 +1,13 @@
 # FreeImage binaries
 
+This is a part of [Node3D](https://github.com/node-3d) project.
+
+
+## Synopsis
+
+This dependency package is distributing **FreeImage**
+binaries through **NPM** for **Node.js** addons.
+
 * Platforms: win x32/x64, linux x32/x64, mac x64.
 * Library: FreeImage.
 * Linking: static dll-type.
