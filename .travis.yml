@@ -1,0 +1,47 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - "8.11.4"
+
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+      - llvm-toolchain-precise-3.5
+    packages:
+      - clang-3.5
+
+
+before_install:
+  - if [[ $(uname -s) == 'Linux' ]]; then
+      export CXX="clang++-3.5";
+      export CC="clang-3.5";
+    fi;
+  - npm install -g npm@5.6.0
+
+
+install:
+  - npm i --XALL
+  - if [ ! -d bin-win32 ] || [ ! -d bin-win64 ] || [ ! -d bin-linux32 ] || [ ! -d bin-linux64 ] || [ ! -d bin-mac64 ]; then
+      echo "Not all directories present";
+      false;
+    fi;
+  - if [ ! -f bin-linux32/libfreeimage.so.3 ] || [ ! -d bin-linux64/libfreeimage.so.3 ]; then
+      echo "Symlink not found";
+      false;
+    fi;
+  - npm i
+  - if [ -d bin-win32 ] || [ -d bin-win64 ] || [ -d bin-linux32 ] || [ ! -d bin-linux64 ] || [ -d bin-mac64 ]; then
+      echo "Unnecessary directories present";
+      false;
+    fi;
+  - cd test && npm i
+  - cd ..
+
+
+script:
+  - cd test && npm test
+  - cd ..
