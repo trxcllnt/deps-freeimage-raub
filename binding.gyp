@@ -3,8 +3,8 @@
 		'rm'    : '<!(node -e "require(\'addon-tools-raub\').rm()")',
 		'rem'   : '<!(node -e "require(\'.\').rem()")',
 		'XALL%' : 'false',
-		'l_x32' : '<!(test -d bin-linux32)',
-		'l_x64' : '<!(test -d bin-linux64)',
+		'l_x32' : '<!(test -d <(module_root_dir)/bin-linux32 && echo "yes" || echo "no")',
+		'l_x64' : '<!(test -d <(module_root_dir)/bin-linux64 && echo "yes" || echo "no")',
 	},
 	'targets': [
 		{
@@ -12,25 +12,25 @@
 			'type'        : 'none',
 			'conditions'  : [
 				[
-					'OS == "linux" and l_x32', {
+					'OS == "linux" and <(l_x32) == "yes"', {
 						'actions': [
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x32 symlink.',
 								'inputs'      : [],
 								'outputs'     : ['bin-linux32'],
-								'action'      : ['ln', '-sf', 'libfreeimage.so', 'bin-linux32/libfreeimage.so.3'],
+								'action'      : ['ln', '-sf', 'bin-linux32/libfreeimage.so', 'bin-linux32/libfreeimage.so.3'],
 							},
 						],
 					},
 				],
 				[
-					'OS == "linux" and l_x64', {
+					'OS == "linux" and <(l_x64) == "yes"', {
 						'actions': [
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x64 symlink.',
 								'inputs'      : [],
 								'outputs'     : ['bin-linux64'],
-								'action'      : ['ln', '-sf', 'libfreeimage.so', 'bin-linux64/libfreeimage.so.3'],
+								'action'      : ['ln', '-sf', 'bin-linux64/libfreeimage.so', 'bin-linux64/libfreeimage.so.3'],
 							},
 						],
 					},

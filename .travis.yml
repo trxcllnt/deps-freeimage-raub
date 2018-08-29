@@ -29,7 +29,7 @@ install:
       echo "Not all directories present";
       false;
     fi;
-  - cd bin-linux32 && ls -la
+  - cd bin-linux32 && ls
   - cd ..
   - if [ ! -L bin-linux32/libfreeimage.so.3 ] || [ ! -L bin-linux64/libfreeimage.so.3 ]; then
       echo "Symlink not found";
