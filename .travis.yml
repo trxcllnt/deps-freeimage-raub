@@ -25,17 +25,17 @@ before_install:
 
 install:
   - npm i --XALL
-  - if [ ! -d bin-win32 ] || [ ! -d bin-win64 ] || [ ! -d bin-linux32 ] || [ ! -d bin-linux64 ] || [ ! -d bin-mac64 ]; then
+  - if [[ ! -d bin-win32 || ! -d bin-win64 || ! -d bin-linux32 || ! -d bin-linux64 || ! -d bin-mac64 ]]; then
       echo "Not all directories present";
       false;
     fi;
-  - if [ ! -L bin-linux32/libfreeimage.so.3 ] || [ ! -L bin-linux64/libfreeimage.so.3 ]; then
+  - if [[ ! -L bin-linux32/libfreeimage.so.3 || ! -L bin-linux64/libfreeimage.so.3 ]]; then
       echo "Symlink not found";
       false;
     fi;
   - npm i
   - ls
-  - if [ -d bin-win32 ] || [ -d bin-win64 ] || [ -d bin-linux32 ] || [ ! -d bin-linux64 ] || [ -d bin-mac64 ]; then
+  - if [[ -d bin-win32 || -d bin-win64 || -d bin-linux32 || ! -d bin-linux64 || -d bin-mac64 ]]; then
       echo "Unnecessary directories present";
       false;
     fi;
