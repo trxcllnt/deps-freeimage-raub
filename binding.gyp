@@ -12,7 +12,7 @@
 			'type'        : 'none',
 			'conditions'  : [
 				[
-					'OS=="linux"&&l_x32', {
+					'OS == "linux" and l_x32', {
 						'actions': [
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x32 symlink.',
@@ -24,7 +24,7 @@
 					},
 				],
 				[
-					'OS=="linux"&&l_x64', {
+					'OS == "linux" and l_x64', {
 						'actions': [
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x64 symlink.',
