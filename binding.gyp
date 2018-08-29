@@ -30,6 +30,7 @@
 		{
 			'target_name' : 'remove_extras',
 			'type'        : 'none',
+			'dependencies' : ['symlinks'],
 			'conditions'  : [[
 				'XALL=="false"', {
 					'actions': [{
