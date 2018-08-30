@@ -17,13 +17,13 @@
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x32 symlink.',
 								'inputs'      : [],
-								'outputs'     : ['bin-linux32'],
+								'outputs'     : ['bin-linux32/libfreeimage.so.3'],
 								'action'      : ['ln', '-sf', 'libfreeimage.so', 'bin-linux32/libfreeimage.so.3'],
 							},
 							{
 								'action_name' : 'Providing libopenjpeg.so.2 x32 symlink.',
 								'inputs'      : [],
-								'outputs'     : ['bin-linux32'],
+								'outputs'     : ['bin-linux32/libopenjpeg.so.2'],
 								'action'      : ['ln', '-sf', 'libopenjpeg.so', 'bin-linux32/libopenjpeg.so.2'],
 							},
 						],
@@ -35,13 +35,13 @@
 							{
 								'action_name' : 'Providing libfreeimage.so.3 x64 symlink.',
 								'inputs'      : [],
-								'outputs'     : ['bin-linux64'],
+								'outputs'     : ['bin-linux64/libfreeimage.so.3'],
 								'action'      : ['ln', '-sf', 'libfreeimage.so', 'bin-linux64/libfreeimage.so.3'],
 							},
 							{
 								'action_name' : 'Providing libopenjpeg.so.2 x64 symlink.',
 								'inputs'      : [],
-								'outputs'     : ['bin-linux64'],
+								'outputs'     : ['bin-linux64/libopenjpeg.so.2'],
 								'action'      : ['ln', '-sf', 'libopenjpeg.so', 'bin-linux64/libopenjpeg.so.2'],
 							},
 						],
