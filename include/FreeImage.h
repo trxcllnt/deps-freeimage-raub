@@ -3,7 +3,7 @@
 //
 // Design and implementation by
 // - Floris van den Berg (flvdberg@wxs.nl)
-// - Hervé Drolon (drolon@infonie.fr)
+// - Herve Drolon (drolon@infonie.fr)
 //
 // Contributors:
 // - see changes log named 'Whatsnew.txt', see header of each .h and .cpp file
@@ -75,7 +75,7 @@
 // or define any of FREEIMAGE_BIGENDIAN and FREEIMAGE_LITTLEENDIAN directly
 // to specify the desired endianness.
 #if (!defined(FREEIMAGE_BIGENDIAN) && !defined(FREEIMAGE_LITTLEENDIAN))
-	#if (defined(BYTE_ORDER) && BYTE_ORDER==BIG_ENDIAN) || (defined(__BYTE_ORDER) && __BYTE_ORDER==__BIG_ENDIAN) || defined(__BIG_ENDIAN__)
+	#if (defined(BYTE_ORDER) && BYTE_ORDER==BIG_ENDIAN) || (defined(__BYTE_ORDER) && __BYTE_ORDER==__BIG_ENDIAN) || (defined(__BYTE_ORDER) && __BYTE_ORDER==__ORDER_BIG_ENDIAN__) || defined(__BIG_ENDIAN__)
 		#define FREEIMAGE_BIGENDIAN
 	#endif // BYTE_ORDER
 #endif // !FREEIMAGE_[BIG|LITTLE]ENDIAN
@@ -155,8 +155,10 @@ typedef uint8_t BYTE;
 typedef uint16_t WORD;
 typedef uint32_t DWORD;
 typedef int32_t LONG;
+#ifndef _LIBRAW_TYPES_H
 typedef int64_t INT64;
 typedef uint64_t UINT64;
+#endif
 #else
 // MS is not C99 ISO compliant
 typedef long BOOL;
@@ -473,6 +475,9 @@ FI_ENUM(FREE_IMAGE_DITHER) {
 	FID_BAYER16x16	= 6		//! Bayer ordered dispersed dot dithering (order 4 dithering matrix)
 };
 
+/* Debian: The JPEGTransform functions are deliberately disabled in our build
+   of FreeImage, since they require usage of the vendored copy of libjpeg. */
+#if 0
 /** Lossless JPEG transformations
 Constants used in FreeImage_JPEGTransform
 */
@@ -486,6 +491,7 @@ FI_ENUM(FREE_IMAGE_JPEG_OPERATION) {
 	FIJPEG_OP_ROTATE_180	= 6,	//! 180-degree rotation
 	FIJPEG_OP_ROTATE_270	= 7		//! 270-degree clockwise (or 90 ccw)
 };
+#endif
 
 /** Tone mapping operators.
 Constants used in FreeImage_ToneMapping.
@@ -1076,7 +1082,9 @@ DLL_API const char* DLL_CALLCONV FreeImage_TagToString(FREE_IMAGE_MDMODEL model,
 // --------------------------------------------------------------------------
 // JPEG lossless transformation routines
 // --------------------------------------------------------------------------
-
+/* Debian: The JPEGTransform functions are deliberately disabled in our build
+   of FreeImage, since they require usage of the vendored copy of libjpeg. */
+#if 0
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransform(const char *src_file, const char *dst_file, FREE_IMAGE_JPEG_OPERATION operation, BOOL perfect FI_DEFAULT(TRUE));
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransformU(const wchar_t *src_file, const wchar_t *dst_file, FREE_IMAGE_JPEG_OPERATION operation, BOOL perfect FI_DEFAULT(TRUE));
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGCrop(const char *src_file, const char *dst_file, int left, int top, int right, int bottom);
@@ -1085,6 +1093,7 @@ DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransformFromHandle(FreeImageIO* src_io,
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransformCombined(const char *src_file, const char *dst_file, FREE_IMAGE_JPEG_OPERATION operation, int* left, int* top, int* right, int* bottom, BOOL perfect FI_DEFAULT(TRUE));
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransformCombinedU(const wchar_t *src_file, const wchar_t *dst_file, FREE_IMAGE_JPEG_OPERATION operation, int* left, int* top, int* right, int* bottom, BOOL perfect FI_DEFAULT(TRUE));
 DLL_API BOOL DLL_CALLCONV FreeImage_JPEGTransformCombinedFromMemory(FIMEMORY* src_stream, FIMEMORY* dst_stream, FREE_IMAGE_JPEG_OPERATION operation, int* left, int* top, int* right, int* bottom, BOOL perfect FI_DEFAULT(TRUE));
+#endif
 
 
 // --------------------------------------------------------------------------
