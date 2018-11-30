@@ -19,13 +19,11 @@ before_install:
 install:
   - npm i --XALL
   - if [[ ! -d bin-win32 || ! -d bin-win64 || ! -d bin-linux64 || ! -d bin-mac64 ]]; then
-      echo "Not all directories present";
-      false;
+      echo "Not all directories present"; ls; false;
     fi;
   - npm i
   - if [[ -d bin-win32 || -d bin-win64 || ! -d bin-linux64 || -d bin-mac64 ]]; then
-      echo "Wrong directories present";
-      false;
+      echo "Wrong directories present"; ls; false;
     fi;
   - cd test
   - npm i
