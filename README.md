@@ -87,5 +87,5 @@ The rest of this package is MIT licensed.
 
 Windows binaries were found on the official web-site.
 Unix binaries are found through
-[Debian Packages](https://packages.debian.org/search?searchon=sourcenames&keywords=freeimage)
+[Ubuntu Packages](https://packages.ubuntu.com/source/cosmic/freeimage)
 and [MacOS Formulae](http://formulae.brew.sh/formula/freeimage).
