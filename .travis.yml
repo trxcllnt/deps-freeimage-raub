@@ -10,31 +10,14 @@ matrix:
     os: linux
     dist: xenial
     sudo: false
-    install:
-      - npm i
-      - if [[ -d bin-win32 || -d bin-win64 || ! -d bin-linux64 || -d bin-mac64 ]]; then
-          echo "Wrong directories present"; ls; false;
-        fi;
   - name: "MacOS"
     os: osx
-    install:
-      - npm i
-      - if [[ -d bin-win32 || -d bin-win64 || -d bin-linux64 || ! -d bin-mac64 ]]; then
-          echo "Wrong directories present"; ls; false;
-        fi;
 
 
-before_install:
-  - npm conf set strict-ssl false
-  - npm install -g npm@6.4.1
-  - npm i --XALL
-  - if [[ ! -d bin-win32 || ! -d bin-win64 || ! -d bin-linux64 || ! -d bin-mac64 ]]; then
-      echo "Not all directories present"; ls; false;
-    fi;
+install:
+  - cd test
+  - npm i
 
 
 script:
-  - cd test
-  - npm i
   - npm test
-  - cd ..
