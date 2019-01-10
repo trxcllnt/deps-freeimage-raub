@@ -1,7 +1,5 @@
 'use strict';
 
-const path = require('path');
-
 const { expect } = require('chai');
 const { stub, spy } = require('sinon');
 
