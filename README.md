@@ -2,9 +2,10 @@
 
 This is a part of [Node3D](https://github.com/node-3d) project.
 
-![NPM](https://nodei.co/npm/deps-freeimage-raub.png?compact=true)
+[![NPM](https://nodei.co/npm/deps-freeimage-raub.png?compact=true)](https://www.npmjs.com/package/deps-freeimage-raub)
 
-![Build Status](https://api.travis-ci.com/node-3d/deps-freeimage-raub.svg?branch=master)
+[![Build Status](https://api.travis-ci.com/node-3d/deps-freeimage-raub.svg?branch=master)](https://travis-ci.com/node-3d/deps-freeimage-raub)
+[![CodeFactor](https://www.codefactor.io/repository/github/node-3d/deps-freeimage-raub/badge)](https://www.codefactor.io/repository/github/node-3d/deps-freeimage-raub)
 
 > npm i -s deps-freeimage-raub
 
