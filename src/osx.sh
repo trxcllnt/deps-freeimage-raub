@@ -1,11 +1,11 @@
 echo 'FreeImage Build Started'
 
-do (
+(
 	
 	cd src
 	unzip -qq FreeImage3170.zip -d .
 	
-	do (
+	(
 		cd FreeImage
 		
 		export DYLIB_INSTALL_NAME_BASE=@rpath
@@ -19,10 +19,10 @@ do (
 			>/dev/null
 		
 	)
-	done
+	
 	
 	mv FreeImage/libfreeimage-3.17.0.dylib-x86_64 freeimage.dylib
 	
-) done
+)
 
 echo 'FreeImage Build Finished'
