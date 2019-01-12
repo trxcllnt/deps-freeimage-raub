@@ -34,7 +34,7 @@ matrix:
 
 deploy:
   on:
-    condition: os = osx AND language = cpp
+    condition: language = cpp
   provider: releases
   name: "Binary for OSX"
   body: $TRAVIS_COMMIT_MESSAGE
