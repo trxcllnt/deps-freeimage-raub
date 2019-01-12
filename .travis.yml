@@ -1,12 +1,5 @@
 matrix:
   include:
-  - name: "Windows Test"
-    os: windows
-    language: node_js
-    node_js: "10.13.0"
-    install:
-    - cd test
-    - npm i
   - name: "Linux Test"
     language: node_js
     node_js: "10.13.0"
