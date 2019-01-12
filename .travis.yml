@@ -27,6 +27,7 @@ matrix:
 
 deploy:
   on:
+    all_branches: true
     condition: language = cpp
   provider: releases
   name: "Binary for OSX"
