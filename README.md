@@ -87,6 +87,9 @@ which also can be found on
 The rest of this package is MIT licensed.
 
 Windows binaries were found on the official web-site.
-Unix binaries are found through
-[Ubuntu Packages](https://packages.ubuntu.com/source/cosmic/freeimage)
-and [MacOS Formulae](http://formulae.brew.sh/formula/freeimage).
+Unix binaries are found in
+[Ubuntu Packages](https://packages.ubuntu.com/source/cosmic/freeimage).
+OSX binaries are built through MAKE system with
+[Travis CI matrix](https://travis-ci.com/node-3d/deps-freeimage-raub).
+See Travis [config](https://github.com/node-3d/deps-freeimage-raub/blob/master/.travis.yml)
+for details.

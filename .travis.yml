@@ -21,6 +21,8 @@ matrix:
     if: commit_message =~ /^:hammer:/
     language: cpp
     compiler: clang++
+    env:
+    - OSXBUILD=true
     script:
       - chmod +x src/osx.sh && src/osx.sh
 
@@ -28,6 +30,7 @@ matrix:
 deploy:
   on:
     all_branches: true
+    condition: $OSXBUILD = true
   provider: releases
   name: "Binary for OSX"
   body: $TRAVIS_COMMIT_MESSAGE
