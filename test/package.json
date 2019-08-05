@@ -8,7 +8,7 @@
 		"start": "mocha"
 	},
 	"dependencies": {
-		"deps-freeimage-raub": "https://github.com/node-3d/deps-freeimage-raub.git",
+		"deps-freeimage-raub": "1.1.1",
 		"chai": "^4.2.0",
 		"mocha": "^5.2.0",
 		"sinon": "^7.1.1"
