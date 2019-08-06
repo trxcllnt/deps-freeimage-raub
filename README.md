@@ -74,7 +74,7 @@ binaries through **NPM** for **Node.js** addons.
 #include <FreeImage.h>
 ```
 
-Refer to [FreeImage official docs](http://mirrors.dotsrc.org/pub/exherbo/FreeImage3170.pdf).
+Refer to [FreeImage 3.17 docs](http://mirrors.dotsrc.org/pub/exherbo/FreeImage3170.pdf).
 
 
 ## Legal notice
