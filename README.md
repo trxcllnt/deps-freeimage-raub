@@ -12,10 +12,10 @@ This is a part of [Node3D](https://github.com/node-3d) project.
 
 ## Synopsis
 
-This dependency package is distributing **FreeImage**
+This dependency package is distributing **FreeImage 3.17**
 binaries through **NPM** for **Node.js** addons.
 
-* Platforms: win x32/x64, linux x64, mac x64.
+* Platforms (x64): Windows, Linux, OSX.
 * Library: FreeImage.
 * Linking: static dll-type.
 
@@ -26,8 +26,8 @@ binaries through **NPM** for **Node.js** addons.
 
 ```javascript
 	'variables': {
-		'freeimage_include' : '<!(node -e "require(\'deps-freeimage-raub\').include()")',
-		'freeimage_bin'     : '<!(node -e "require(\'deps-freeimage-raub\').bin()")',
+		'freeimage_include' : '<!(node -p "require(\'deps-freeimage-raub\').include")',
+		'freeimage_bin'     : '<!(node -p "require(\'deps-freeimage-raub\').bin")',
 	},
 	...
 	'targets': [
@@ -73,6 +73,8 @@ binaries through **NPM** for **Node.js** addons.
 ```cpp
 #include <FreeImage.h>
 ```
+
+Refer to [FreeImage official docs](http://mirrors.dotsrc.org/pub/exherbo/FreeImage3170.pdf).
 
 
 ## Legal notice
