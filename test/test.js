@@ -3,7 +3,7 @@
 const { expect } = require('chai');
 const { stub, spy } = require('sinon');
 
-const deps = require('deps-freeimage-raub');
+const deps = require('..');
 
 
 describe('Paths', () => {
