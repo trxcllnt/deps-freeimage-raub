@@ -24,6 +24,15 @@
 		"native",
 		"gyp"
 	],
+	"files": [
+		"include",
+		"index.js",
+		"install.js",
+		"FREEIMAGE_FIPL",
+		"LICENSE",
+		"package.json",
+		"README.md"
+	],
 	"config": {
 		"install": "v2.0.0"
 	},
